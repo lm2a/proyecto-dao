@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+	<persistence-unit name="UPPRY2"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>com.lm2a.manytomany.Student</class>
+		<class>com.lm2a.manytomany.Course</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="org.apache.derby.jdbc.EmbeddedDriver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:derby:/Users/lm2a/databases/simple6Db;create=true" />
+			<property name="javax.persistence.jdbc.user" value="lm2a" />
+			<property name="javax.persistence.jdbc.password"
+				value="test" />
+
+			<!-- EclipseLink specific properties (drop-and-) -->
+			<property name="eclipselink.target-database" value="Derby" />
+			<property name="eclipselink.ddl-generation"
+				value="create-tables" />
+			<!-- <property name="eclipselink.logging.level" value="FINE"/> -->
+			<!-- <property name="eclipselink.debug" value="ALL" /> -->
+			<!-- <property name="eclipselink.weaving" value="static" /> -->
+			<!-- <property name="eclipselink.logging.level" value="FINEST" /> -->
+			<property name="eclipselink.logging.level.sql"
+				value="FINEST" />
+			<!-- <property name="eclipselink.logging.level.cache" -->
+			<!-- value="FINEST" /> -->
+
+		</properties>
+	</persistence-unit>
+</persistence>
